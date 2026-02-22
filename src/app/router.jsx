@@ -5,19 +5,19 @@ import AppLayout from "../layouts/AppLayout";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 
 // Pages — Auth
-import Login    from "../pages/Auth/Login";
-import Register from "../pages/Auth/Register";
-import Landing  from "../pages/Landing/Landing";
+import Login    from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
+import Landing  from "../pages/landing/Landing";
 
 // Pages — App
-import Dashboard    from "../pages/Dashboard/Dashboard";
-import ChatPlanner from "../pages/Chat/ChatPlanner";
-import PlanPreview  from "../pages/Preview/PlanPreview";
-import Task         from "../pages/Task/Task";
-import Activity     from "../pages/Activity/Activity";
-import ActivityDetail from "../pages/Activity/ActivityDetail";
-import Notes        from "../pages/Notes/Notes";
-import NotesDetail  from "../pages/Notes/NotesDetail";
+import Dashboard    from "../pages/dashboard/Dashboard";
+import ChatPlanner from "../pages/chat/ChatPlanner";
+import PlanPreview  from "../pages/preview/PlanPreview";
+import Task         from "../pages/task/Task";
+import Activity     from "../pages/activity/Activity";
+import ActivityDetail from "../pages/activity/ActivityDetail";
+import Notes        from "../pages/notes/Notes";
+import NotesDetail  from "../pages/notes/NotesDetail";
 
 // ── Root wrapper that provides Auth context inside Router ──
 function RootWithAuth() {
