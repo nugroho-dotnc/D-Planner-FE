@@ -11,7 +11,7 @@ import Landing  from "../pages/landing/Landing";
 
 // Pages — App
 import Dashboard    from "../pages/dashboard/Dashboard";
-import ChatPlanner  from "../pages/Chat/ChatPlanner";
+import ChatPlanner from "../pages/Chat/ChatPlanner";
 import PlanPreview  from "../pages/preview/PlanPreview";
 import Task         from "../pages/task/Task";
 import Activity     from "../pages/activity/Activity";

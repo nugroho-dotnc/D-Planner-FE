@@ -84,7 +84,7 @@ function SavedToast({ count, onDone }) {
 /* ═══════════════════════════════════════
    ChatPage — UI sama persis, real API
 ═══════════════════════════════════════ */
-export default function ChatPage() {
+export default function ChatPlanner() {
   const [messages,    setMessages]    = useState([GREETING]);
   const [input,       setInput]       = useState("");
   const [loading,     setLoading]     = useState(false);
