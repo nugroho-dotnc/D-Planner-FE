@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* =========================
+   BESOK UI THEME (v4)
+   ========================= */
+@theme {
+  /* =========================
+     BRAND / ACCENT
+     ========================= */
+  --color-primary: #6366F1;        /* indigo-500 (CTA, highlight utama) */
+  --color-primary-soft: #818CF8;   /* hover / glow */
+  --color-secondary: #3B82F6;      /* blue-500 (aurora layer, accent) */
+  --color-accent: #A5B4FC;         /* soft indigo (badge, subtle text) */
+
+  /* =========================
+     BACKGROUND
+     ========================= */
+  --color-background: #0B1220;     /* landing base bg */
+  --color-background-soft: #0F172A;/* section separation */
+
+  /* =========================
+     SURFACE / GLASS
+     ========================= */
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-strong: rgba(255, 255, 255, 0.10);
+  --color-surface-soft: rgba(255, 255, 255, 0.03);
+
+  /* =========================
+     TEXT
+     ========================= */
+  --color-text-primary: #FFFFFF;   /* hero headline */
+  --color-text-secondary: rgba(255, 255, 255, 0.65);
+  --color-text-muted: rgba(255, 255, 255, 0.45);
+
+  /* =========================
+     STATE
+     ========================= */
+  --color-success: #22C55E;
+  --color-warning: #FACC15;
+  --color-danger: #F87171;
+
+  /* =========================
+     BORDER
+     ========================= */
+  --color-border: rgba(255, 255, 255, 0.10);
+
+  /* =========================
+     EFFECT
+     ========================= */
+  --blur-glass: 18px;
+  --blur-liquid: 120px;
+  --radius-card: 1.75rem;
+  --radius-pill: 9999px;
+}
+
+/* =========================
+   BASE STYLE
+   ========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* =========================
+   GLASS CARD (GLOBAL)
+   ========================= */
+.glass {
+  background-color: var(--color-surface);
+  backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+.glass-strong {
+  background-color: var(--color-surface-strong);
+  backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--color-border);
+}
+
+.liquid-bg {
+  background:
+    radial-gradient(circle at 20% 20%, var(--color-primary) 0%, transparent 45%),
+    radial-gradient(circle at 80% 30%, var(--color-secondary) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, var(--color-accent) 0%, transparent 45%),
+    linear-gradient(
+      to bottom,
+      var(--color-background-liquid-1),
+      var(--color-background-liquid-3)
+    );
+  filter: blur(var(--blur-liquid));
+  opacity: 0.6;
+  position: fixed;
+  inset: -30%;
+  z-index: -10;
+  animation: liquidFlow 30s ease-in-out infinite alternate;
+}
+
+@keyframes liquidFlow {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-4%) scale(1.05); }
+}
