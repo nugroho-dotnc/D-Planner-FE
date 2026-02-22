@@ -45,8 +45,8 @@ export default function AppLayout() {
         flex-1 flex flex-col relative
         /* Desktop: Padding left to account for fixed sidebar */
         lg:pl-64
-        /* Mobile: Padding bottom to account for fixed navbar */
-        pb-24 lg:pb-0
+        /* Mobile: Padding bottom to account for fixed navbar + extra space */
+        pb-28 lg:pb-0
       `}>
         <div className="flex-1 w-full max-w-7xl mx-auto p-6 md:p-8">
           <Outlet />

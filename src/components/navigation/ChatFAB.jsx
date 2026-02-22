@@ -17,7 +17,7 @@ const ChatFAB = ({onClick}) => {
         text-white rounded-2xl shadow-[0_10px_40px_rgba(99,102,241,0.4)]
         cursor-pointer transition-all duration-300
         /* Mobile Position: Bottom right, above bottom navbar */
-        bottom-24 right-6 w-14 h-14
+        bottom-28 right-6 w-14 h-14
         /* Desktop Position: Bottom right */
         lg:bottom-8 lg:right-8 lg:w-16 lg:h-16
       `}

@@ -93,7 +93,7 @@ function ActivityRow({ activity, index, onChange, onDelete }) {
         </div>
 
         {/* Title & Date */}
-        <div className="flex-1 min-w-0 flex flex-col pt-0.5">
+        <div className="flex-1 min-w-[120px] flex flex-col pt-0.5">
           <div className="flex items-center gap-1.5 mb-1">
             <CalendarDays size={9} className="text-white/20" />
             <span className="text-[9px] font-black text-white/25 uppercase tracking-wider">
@@ -112,13 +112,13 @@ function ActivityRow({ activity, index, onChange, onDelete }) {
         </div>
 
         {/* startTime — endTime */}
-        <div className="flex items-center gap-1 shrink-0">
+        <div className="flex items-center gap-1 shrink-0 bg-white/5 md:bg-transparent px-2 py-1 rounded-lg md:p-0">
           <input
             type="time"
             value={activity.startTime ?? ""}
             onChange={(e) => onChange({ ...activity, startTime: e.target.value || null })}
             className="bg-transparent outline-none text-[11px] font-black text-white/35
-                       hover:text-white/65 focus:text-white transition-colors w-[4rem] text-right"
+                       hover:text-white/65 focus:text-white transition-colors w-[3.5rem] md:w-[4rem] text-right"
           />
           <span className="text-white/15 text-[10px]">—</span>
           <input
@@ -126,7 +126,7 @@ function ActivityRow({ activity, index, onChange, onDelete }) {
             value={activity.endTime ?? ""}
             onChange={(e) => onChange({ ...activity, endTime: e.target.value || null })}
             className="bg-transparent outline-none text-[11px] font-black text-white/35
-                       hover:text-white/65 focus:text-white transition-colors w-[4rem]"
+                       hover:text-white/65 focus:text-white transition-colors w-[3.5rem] md:w-[4rem]"
           />
         </div>
 
@@ -200,28 +200,30 @@ function ActivityRow({ activity, index, onChange, onDelete }) {
               )}
 
               {/* Priority selector */}
-              <div className="flex items-center gap-1.5 ml-auto">
+              <div className="flex items-center gap-1.5 ml-auto flex-wrap justify-end">
                 <span className="text-[9px] text-white/20 font-black uppercase tracking-wider">
                   Prioritas:
                 </span>
-                {Object.entries(PRIORITY_CFG).map(([key, cfg]) => {
-                  const isActive = activity.priority === key;
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => onChange({ ...activity, priority: key })}
-                      className={`flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-black
-                                  uppercase tracking-wider border transition-all
-                        ${isActive
-                          ? `${cfg.activeBg} ${cfg.text} ${cfg.activeBorder}`
-                          : "bg-transparent border-transparent text-white/20 hover:text-white/40"
-                        }`}
-                    >
-                      <span className={`w-1 h-1 rounded-full ${cfg.dot}`} />
-                      {cfg.label}
-                    </button>
-                  );
-                })}
+                <div className="flex gap-1 flex-wrap justify-end">
+                  {Object.entries(PRIORITY_CFG).map(([key, cfg]) => {
+                    const isActive = activity.priority === key;
+                    return (
+                      <button
+                        key={key}
+                        onClick={() => onChange({ ...activity, priority: key })}
+                        className={`flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-black
+                                    uppercase tracking-wider border transition-all
+                          ${isActive
+                            ? `${cfg.activeBg} ${cfg.text} ${cfg.activeBorder}`
+                            : "bg-transparent border-transparent text-white/20 hover:text-white/40"
+                          }`}
+                      >
+                        <span className={`w-1 h-1 rounded-full ${cfg.dot}`} />
+                        {cfg.label}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </motion.div>

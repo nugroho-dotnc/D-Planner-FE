@@ -79,7 +79,7 @@ export default function AddNoteModal({ isOpen, onClose, onAdd }) {
             exit={{ opacity: 0,  y: 28,  scale: 0.97 }}
             transition={{ type: "spring", stiffness: 380, damping: 28 }}
             onKeyDown={handleKeyDown}
-            className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-6
+            className="fixed bottom-0 left-0 right-0 z-50 px-2 pb-2
                        md:bottom-auto md:top-1/2 md:left-1/2
                        md:-translate-x-1/2 md:-translate-y-1/2
                        md:max-w-lg md:w-full md:pb-0 md:px-0"
@@ -134,7 +134,7 @@ export default function AddNoteModal({ isOpen, onClose, onAdd }) {
                 />
 
                 {/* Meta Grid */}
-                <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   <div>
                     <FieldLabel icon={CalendarDays}>Related Date</FieldLabel>
                     <input
