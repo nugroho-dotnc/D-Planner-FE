@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import PremiumButton from "../common/Premiumbutton";
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
@@ -29,7 +30,7 @@ function Navbar() {
           <a href="#how-it-works" className="hover:text-white transition-colors">Features</a>
           <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
         </div> */}
-        <PremiumButton onClick={() => window.location.href = "/login"} className="px-4! py-2! text-base! fo">Get Started</PremiumButton>
+        <PremiumButton onClick={() => navigate("/login")} className="px-4! py-2! text-base! fo">Get Started</PremiumButton>
       </div>
     </motion.nav>
   );
